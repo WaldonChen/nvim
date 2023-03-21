@@ -18,5 +18,15 @@ end
 -- windows
 map("n", "<leader>ws", "<C-W>s", { desc = "Split window below" })
 map("n", "<leader>wv", "<C-W>v", { desc = "Split window right" })
-map("n", "<leader>wm", "<C-W>|<C-W>_", { desc = "Maximize window" })
+map("n", "<leader>wm", function()
+  vim.cmd("vertical resize")
+  vim.cmd.resize()
+end, { desc = "Maximize window" })
 map("n", "<leader>w=", "<C-W>=", { desc = "Make windows equal" })
+map("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
+map("n", "<leader>gG", function()
+  Util.float_term({ "lazygit" }, { cwd = Util.get_root() })
+end, { desc = "Lazygit" })
+
+-- files
+map("n", "<leader>fs", "<cmd>w<cr>", { desc = "Save file" })
