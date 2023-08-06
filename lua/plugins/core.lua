@@ -5,8 +5,16 @@ return {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
   },
-  { "catppuccin/nvim", name = "catppuccin" },
-  { "TimUntersberger/neogit" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+  },
+  {
+    "TimUntersberger/neogit",
+    init = function()
+      require("neogit").setup()
+    end,
+  },
   -- configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
