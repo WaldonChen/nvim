@@ -5,6 +5,15 @@ return {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
   },
+  -- transparent background
+  {
+    "tribela/vim-transparent",
+    config = function()
+      require("notify").setup({
+        background_colour = "#000000",
+      })
+    end,
+  },
   {
     "catppuccin/nvim",
     name = "catppuccin",
