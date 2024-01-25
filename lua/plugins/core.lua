@@ -10,10 +10,13 @@ return {
     name = "catppuccin",
   },
   {
-    "TimUntersberger/neogit",
-    init = function()
-      require("neogit").setup()
-    end,
+    "Neogitorg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = true,
   },
   -- configure LazyVim to load gruvbox
   {
