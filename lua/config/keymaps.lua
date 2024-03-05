@@ -33,3 +33,6 @@ map("n", "<leader>fs", "<cmd>w<cr>", { desc = "Save file" })
 
 -- navbuddy
 map("n", "<leader>n", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
+
+-- suspend
+map("n", "<leader>z", "<cmd>suspend<cr>", { desc = "Suspend" })
