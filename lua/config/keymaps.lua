@@ -23,16 +23,9 @@ map("n", "<leader>wm", function()
   vim.cmd.resize()
 end, { desc = "Maximize window" })
 map("n", "<leader>w=", "<C-W>=", { desc = "Make windows equal" })
-map("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
-map("n", "<leader>gG", function()
-  Util.float_term({ "lazygit" }, { cwd = Util.get_root() })
-end, { desc = "Lazygit" })
 
 -- files
 map("n", "<leader>fs", "<cmd>w<cr>", { desc = "Save file" })
-
--- navbuddy
-map("n", "<leader>n", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
 
 -- suspend
 map("n", "<leader>z", "<cmd>suspend<cr>", { desc = "Suspend" })

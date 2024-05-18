@@ -26,6 +26,13 @@ return {
       "nvim-telescope/telescope.nvim",
     },
     config = true,
+    keys = {
+      {
+        "<leader>gg",
+        "<cmd>Neogit<cr>",
+        desc = "Neogit",
+      },
+    },
   },
   -- configure LazyVim to load gruvbox
   {
