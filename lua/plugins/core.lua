@@ -23,7 +23,9 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",
-      "nvim-telescope/telescope.nvim",
+      -- Only one of these is needed, not both.
+      -- "nvim-telescope/telescope.nvim", -- optional
+      -- "ibhagwan/fzf-lua", -- optional
     },
     config = true,
     keys = {
@@ -49,7 +51,7 @@ return {
       ensure_installed = {
         "bash",
         "cpp",
-        "help",
+        -- "help",
         -- "html",
         -- "javascript",
         "json",
@@ -68,26 +70,36 @@ return {
   },
 
   {
-    "kkoomen/vim-doge",
-    run = ":call doge#install()",
-  },
-
-  { "echasnovski/mini.comment", enabled = false },
-  { "numToStr/Comment.nvim", config = true },
-
-  -- Lsp servers
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shfmt",
-        "flake8",
-        "cmake-language-server", -- "cmakelang",
-        "clangd",
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim",
+        },
+        opts = { lsp = { auto_attach = true } },
+        keys = {
+          {
+            "<leader>sn",
+            "<cmd>Navbuddy<cr>",
+            desc = "Go to Symbol (Navbuddy)",
+          },
+        },
       },
     },
   },
+  {
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        search = {
+          enabled = false,
+        },
+      },
+    },
+  },
+
   -- Alternative subsitute
   -- :%s /\(\a\+\)\d\+/\1/g          -- :substitute
   -- :S /(%a+)%d+/%1/g               -- :AltSubstitute
