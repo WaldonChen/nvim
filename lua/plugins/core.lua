@@ -7,12 +7,9 @@ return {
   },
   -- transparent background
   {
-    "tribela/vim-transparent",
-    config = function()
-      require("notify").setup({
-        background_colour = "#000000",
-      })
-    end,
+    "tribela/transparent.nvim",
+    event = "VimEnter",
+    config = true,
   },
   {
     "catppuccin/nvim",
